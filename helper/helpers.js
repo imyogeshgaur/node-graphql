@@ -4,7 +4,7 @@ const dcryptUser = (token)=>{
     const validToken = jwt.verify(token,"qweerrtyytgdfvnfvdfjverv")
     if(validToken){
         const userId = jwt.decode(token,{complete:true})
-        return userId.payload
+        return userId.payload.userId
     }
 }
 

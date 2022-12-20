@@ -37,7 +37,7 @@ const typeDefs = gql`
     type Mutation{
         createUser(userInp:UserInput!) : User
         signInUser(userSignIn:UserSignIn!) : Data
-        purchaseItem(itemName:String!,qty:String!) : Item
+        purchasedItem(itemName:String!,qty:String!):String
     }
 
 `;

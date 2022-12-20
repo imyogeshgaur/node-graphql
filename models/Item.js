@@ -9,6 +9,10 @@ const itemSchema = Schema({
         type: String,
         required: true,
         unique: true
+    },
+    purchasedBy:{
+        type:Schema.Types.ObjectId,
+        ref:"User"
     }
 })
 

@@ -37,14 +37,14 @@ const resolvers = {
                 }
             }
         },
-        purchaseItem:async(_,{itemName,qty},{userId})=>{
+        purchasedItem:async(_,{itemName,qty},{userId})=>{
             const newItem = await Item.create({
                 itemName,
                 qty,
                 purchasedBy:userId
             })
-            const item = await newItem.save();
-            return item;
+            await newItem.save();
+            return "Item Saved Successfully !!!"
         }
      }
  }
