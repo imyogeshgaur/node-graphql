@@ -3,15 +3,13 @@ import Item from "../models/Item.js";
 import bcryptjs from "bcryptjs"
 import jwt from "jsonwebtoken"
 const resolvers = {
-    //  Query:{
-    //      users:()=>users,
-    //      user:(_,{id})=>users.find(usr=>usr._id==id),
-    //      items:()=>items,
-    //      item:(_,{itemid})=>items.find(itm=>itm._id==itemid)
-    //  },
-    //  User:{
-    //      items:(ur)=>items.filter(item=>item.purchasedBy === ur._id)
-    //  },
+     Query:{
+         users:async()=>await User.find(),
+         user:async(_,{_id})=>await User.findOne({_id}),
+         items:async()=>await Item.find(),
+         item:async(_,{_id})=>await Item.findOne({_id}),
+         getUserForItem:async(_,{purchasedBy})=>await Item.find({purchasedBy})
+     },
      Mutation:{
         createUser:async(_,{userInp})=>{
             const {name,email,password} = userInp

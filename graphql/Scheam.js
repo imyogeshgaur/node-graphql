@@ -3,9 +3,10 @@ import { gql } from "apollo-server-core";
 const typeDefs = gql`
     type Query {
         users:[User!]!
-        user(id:ID!): User
+        user(_id:ID!): User
         items:[Item!]!
-        item(itemid:ID!) : Item
+        item(_id:ID!) : Item
+        getUserForItem(purchasedBy:ID):[Item]
     }
 
     type User {
