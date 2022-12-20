@@ -9,16 +9,16 @@ const typeDefs = gql`
     }
 
     type User {
-        id:ID
+        _id:ID
         name:String
         email:String
         password:String,
         items:[Item]
     }
     type Item {
-        itemid:ID,
+        _id:ID,
         itemName:String
-        qty:Int
+        qty:String
         purchasedBy:ID,
     }
 
@@ -27,8 +27,17 @@ const typeDefs = gql`
         email:String!
         password:String!
     }
+    input UserSignIn{
+        email:String!
+        password:String!
+    }
+    type Data{
+        data:String!
+    }
     type Mutation{
         createUser(userInp:UserInput!) : User
+        signInUser(userSignIn:UserSignIn!) : Data
+        purchaseItem(itemName:String!,qty:String!) : Item
     }
 
 `;
