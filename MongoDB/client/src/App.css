@@ -1,0 +1,11 @@
+.cardStyle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 13rem;
+}
+
+.card{
+  background-color: rgb(109, 228, 115);
+  width: 28rem;
+}
