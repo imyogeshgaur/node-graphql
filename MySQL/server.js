@@ -1,7 +1,7 @@
 import express, { urlencoded } from "express";
 const app = express();
 import {ApolloServer} from 'apollo-server'
-import typeDefs from "./graphql/Scheam.js";
+import typeDefs from "./graphql/Schema.js";
 import {ApolloServerPluginLandingPageGraphQLPlayground} from 'apollo-server-core'
 import resolvers from "./graphql/resolvers.js"
 import connectToDB from "./database/connection.js";

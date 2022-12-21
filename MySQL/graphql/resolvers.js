@@ -4,9 +4,9 @@ import bcryptjs from "bcryptjs"
 import jwt from "jsonwebtoken"
 const resolvers = {
      Query:{
-         users:async()=>await User.find(),
+         users:async()=>await User.findAll(),
          user:async(_,{_id})=>await User.findOne({_id}),
-         items:async()=>await Item.find(),
+         items:async()=>await Item.findAll(),
          item:async(_,{_id})=>await Item.findOne({_id}),
          getUserForItem:async(_,{purchasedBy})=>await Item.find({purchasedBy})
      },
