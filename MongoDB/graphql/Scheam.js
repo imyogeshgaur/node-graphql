@@ -6,7 +6,6 @@ const typeDefs = gql`
         user(_id:ID!): User
         items:[Item!]!
         item(_id:ID!) : Item
-        getUserForItem(purchasedBy:ID):[Item]
     }
 
     type User {

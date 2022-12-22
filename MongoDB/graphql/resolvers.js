@@ -8,7 +8,9 @@ const resolvers = {
          user:async(_,{_id})=>await User.findOne({_id}),
          items:async()=>await Item.find(),
          item:async(_,{_id})=>await Item.findOne({_id}),
-         getUserForItem:async(_,{purchasedBy})=>await Item.find({purchasedBy})
+     },
+     User:{
+        items:async(ur)=>await Item.find({purchasedBy:ur._id})
      },
      Mutation:{
         createUser:async(_,{userInp})=>{

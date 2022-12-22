@@ -7,15 +7,15 @@ const AddItem = () => {
     <>
       <NavBar />
       <div className="cardStyle">
-        <div class="card">
-          <div class="card-body ">
+        <div className="card">
+          <div className="card-body ">
             <h5 className='card-tilte text-center fw-bold'>Add Item</h5>
             <div className="mb-3">
-              <label for="exampleFormControlInput1" className="form-label">Item Name</label>
+              <label htmlFor="exampleFormControlInput1" className="form-label">Item Name</label>
               <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="Enter Item Name" />
             </div>
             <div className="mb-3">
-              <label for="exampleFormControlInput1" className="form-label">Quantity</label>
+              <label htmlFor="exampleFormControlInput1" className="form-label">Quantity</label>
               <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="Enter Item Quantity" />
             </div>
           </div>
