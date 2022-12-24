@@ -14,8 +14,8 @@ query getAllUsers{
 }
 `
 export const GET_A_USER = gql`
-query getAUser{
-  user(_id:"63a137a2fa14528a85127a76"){
+query getAUser($_id:ID!){
+  user(_id:$_id){
     name
     email
     items{

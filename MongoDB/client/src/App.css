@@ -4,6 +4,12 @@
   align-items: center;
   margin-top: 13rem;
 }
+.cardStyle2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+}
 
 .card{
   background-color: rgb(109, 228, 115);

@@ -14,7 +14,7 @@ const newClient = new ApolloClient({
   cache: new InMemoryCache(),
   headers:{
     'Content-Type':'application/json',
-     'authorisation':token || undefined
+     authorisation:token || undefined
   }
 });
 

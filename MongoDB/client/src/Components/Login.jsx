@@ -5,7 +5,7 @@ import { SIGN_IN_USER } from '../graphql/Mutations'
 const Login = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const [signInUser] = useMutation(SIGN_IN_USER)
+    const [signInUser, { loading, error }] = useMutation(SIGN_IN_USER)
     const navigate = useNavigate();
     const handleSubmit = async () => {
         const data = await signInUser({
@@ -20,6 +20,8 @@ const Login = () => {
             navigate("/home")
         }
     }
+    if (loading) return (<h1 className='text-center text-primary' style={{ marginTop: "10rem" }}>Loading ....</h1>)
+    if (error) console.log(error)
     return (
         <>
             <div className="cardStyle">

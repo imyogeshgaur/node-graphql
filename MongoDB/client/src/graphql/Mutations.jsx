@@ -16,3 +16,10 @@ mutation signInUser($userSignIn:UserSignIn!){
   }
 }
 `
+
+export const ADD_ITEM = gql`
+mutation {
+  purchasedItem(itemName:String!,qty:String!):String
+}
+
+`

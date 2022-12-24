@@ -7,7 +7,7 @@ const Signup = () => {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const [createUser] = useMutation(SIGN_UP_USER)
+    const [createUser, { loading, error }] = useMutation(SIGN_UP_USER)
 
     const handleSubmit = () => {
         try {
@@ -24,6 +24,8 @@ const Signup = () => {
             console.log(error)
         }
     }
+    if (loading) return (<h1 className='text-center text-primary' style={{ marginTop: "10rem" }}>Loading ....</h1>)
+    if (error) console.log(error)
     return (
         <>
             <div className="cardStyle">
